@@ -1,12 +1,13 @@
 body {
 	font-family: 'PT Sans Narrow', sans-serif;
+	background-color: #1E226B;
 }
 
 #jumbotron,
 #submitButton {
 	background-color: #B82C0C;
 	color: white;
-	border: solid 3px #1E226B;
+	border: solid 3px white;
 }
 
 
@@ -20,7 +21,7 @@ body {
 
 #trainSchedulePanel,
 #addTrainPanel {
-	border: solid 3px #1E226B;
+	border: solid 3px white;
 }
 
 
