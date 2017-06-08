@@ -1,0 +1,36 @@
+body {
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#jumbotron,
+#submitButton {
+	background-color: #B82C0C;
+	color: white;
+	border: solid 3px #1E226B;
+}
+
+
+#trainSchedulePanelHead,
+#addTrainPanelHead {
+	background-color: #B82C0C;
+	color: white;
+	font-size: 20px;
+	/*border: solid 2px #1E226B;*/
+}
+
+#trainSchedulePanel,
+#addTrainPanel {
+	border: solid 3px #1E226B;
+}
+
+
+thead,
+form {
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+tbody,
+input {
+	font-size: 15px;
+}

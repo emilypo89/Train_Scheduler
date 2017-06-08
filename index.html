@@ -6,20 +6,23 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
 
 	
 </head>
 <body>
 <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron" id="jumbotron">
 		  <h1>Train Schedule</h1>
-		  <p>Check to see when you train is coming. You can also add new trains below!</p>
+		  <p>Check to see when your train is coming.</p>
+		  <p> Add new trains below!</p>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default">
-  				<div class="panel-heading">
+				<div class="panel panel-default" id="trainSchedulePanel">
+  				<div class="panel-heading" id="trainSchedulePanelHead">
     				<h3 class="panel-title">Current Train Schedule</h3>
  					</div>
  					<div class="panel-body">
@@ -43,8 +46,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="panel panel-default">
-  				<div class="panel-heading">
+				<div class="panel panel-default" id="addTrainPanel">
+  				<div class="panel-heading" id="addTrainPanelHead">
     				<h3 class="panel-title">Add Train</h3>
  					</div>
  					<div class="panel-body">
@@ -58,12 +61,12 @@
 						    <input type="name" class="form-control" id="destination" placeholder="Destination">
 						  </div>
 						  <div class="form-group">
-						    <label for="first-train-time">First Train Time(HH:mm - military time):</label>
+						    <label for="first-train-time">First Train Time(HH:mm AM/PM):</label>
 						    <input type="time" class="form-control" id="firstTrainTime" placeholder="First Train Time">
 						  </div>
 						  <div class="form-group">
 						    <label for="frequency">Frequency(min):</label>
-						    <input type="integer" class="form-control" id="frequency" placeholder="Frequency">
+						    <input type="number" class="form-control" id="frequency" placeholder="Frequency">
 						  </div>
 						  <button type="submit" class="btn btn-default" id="submitButton">Submit</button>
 						</form>
