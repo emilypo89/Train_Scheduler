@@ -53,11 +53,12 @@ database.ref().on("child_added", function(childSnapshot) {
 
 // Moment.js
 	// First Time (pushed back 1 year to make sure it comes before current time)
-	var firstTimeConverted = moment(childSnapshot.val().firstTrainTime, "hh:mm").subtract(1, "years");
+  // cannot figure out how to get the moment.js to include the PM with the time
+	var firstTimeConverted = moment(childSnapshot.val().firstTrainTime, "hh:mm A").subtract(1, "years");
 	console.log(firstTimeConverted);
 	// Current Time
 	var currentTime = moment();
-	console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+	console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm A"));
 	// Difference between the times
 	var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
 	console.log("DIFFERENCE IN TIME: " + diffTime);
@@ -69,7 +70,7 @@ database.ref().on("child_added", function(childSnapshot) {
 	console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 	// Next Train
 	var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm A"));
 
   // full list of items to the well
   $("tbody").append("<tr><th id='newTrainName'> " + childSnapshot.val().trainName +
