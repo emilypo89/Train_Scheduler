@@ -23,10 +23,12 @@ var frequency = 0;
 $("#submitButton").on("click", function(event) {
   event.preventDefault();
 
-  trainName = $("#trainName").val().trim();
-  destination = $("#destination").val().trim();
-  firstTrainTime = $("#firstTrainTime").val().trim();
-  frequency = $("#frequency").val().trim();
+  // grabs user input
+  var trainName = $("#trainName").val().trim();
+  var destination = $("#destination").val().trim();
+  var firstTrainTime = moment($("#firstTrainTime").val().trim(), "HH:mm").subtract(10, "years").format("X");
+  var frequency = $("#frequency").val().trim();
+
 
 
   // Code for the push
@@ -45,11 +47,15 @@ $("#submitButton").on("click", function(event) {
 database.ref().on("child_added", function(childSnapshot) {
 
   // Log everything that's coming out of snapshot
-  console.log(childSnapshot.val().trainName);
-  console.log(childSnapshot.val().destination);
-  console.log(childSnapshot.val().firstTrainTime);
-  console.log(childSnapshot.val().frequency);
+  console.log(childSnapshot.val());
   console.log(childSnapshot.val().joinDate);
+  
+  // Store everything in a variable
+  var tName = childSnapshot.val().trainName;
+  var tDestination = childSnapshot.val().destination;
+  var tFirstTrain = childSnapshot.val().firstTrainTime;
+  var tFrequnecy = childSnapshot.val().frequency;
+ 
 
 // Moment.js
 	// First Time (pushed back 1 year to make sure it comes before current time)
