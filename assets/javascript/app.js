@@ -21,6 +21,8 @@ $("#submitButton").on("click", function(event) {
   var firstTrainTime = moment($("#firstTrainTime").val().trim(), "HH:mm").subtract(10, "years").format("X");
   var frequency = $("#frequency").val().trim();
 
+
+
   // creates local object for holding train data
   var newTrain ={
     trainName: trainName,
